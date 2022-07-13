@@ -1,8 +1,7 @@
 package exececao2;
 
-public class MultiplosCatch {
-
-	public static void main(String[] args) {
+public class TestandoFinally {
+public static void main(String[] args) {
 		
 		int[] numeros = {4, 8, 16, 32, 64, 128};
 		
@@ -13,11 +12,16 @@ public class MultiplosCatch {
 				System.out.println(numeros[i] + "/" + denom[i] + "=" + numeros[i]/denom[i]);
 			} catch (ArithmeticException e1) {
 				System.out.println("Erro ao dividir por zero");
+				System.exit(0);
 			} catch (ArrayIndexOutOfBoundsException e2) {
 				System.out.println("Posição do array inválida");
-			} 
+				System.exit(0); // encerra o programa
+			}
+			finally {
+				System.out.println("Essa linha é impressa sempre após o try ou catch");
+				System.out.println();
+			}
 		}
 		
 	}
-
 }

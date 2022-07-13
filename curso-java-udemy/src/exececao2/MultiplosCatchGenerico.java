@@ -1,6 +1,6 @@
 package exececao2;
 
-public class MultiplosCatch {
+public class MultiplosCatchGenerico {
 
 	public static void main(String[] args) {
 		
@@ -11,11 +11,11 @@ public class MultiplosCatch {
 		for (int i = 0; i < numeros.length; i++) {
 			try {
 				System.out.println(numeros[i] + "/" + denom[i] + "=" + numeros[i]/denom[i]);
-			} catch (ArithmeticException e1) {
-				System.out.println("Erro ao dividir por zero");
-			} catch (ArrayIndexOutOfBoundsException e2) {
-				System.out.println("Posição do array inválida");
-			} 
+			} catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
+				System.out.println("Ocorreu um erro");
+			} catch (Throwable e3) {
+				System.out.println("Ocorreu um erro!");
+			}
 		}
 		
 	}
